@@ -4,14 +4,14 @@ let box = 32;
 let snake = [];
 
 snake[0]={
-    x: 8 * box ,
+    x: 8 * box,
     y: 8 * box
 }
 
 let direction = 'right';
 let food = { 
-    x: Math.floor(Math.random() * 15 + 1 ) * box;
-    x: Math.floor(Math.random() * 15 + 1 ) * box;
+    x: Math.floor((Math.random() * 15 + 1 ) * box),
+    x: Math.floor((Math.random() * 15 + 1 ) * box),
 }
 
 function criarBG() {
@@ -28,8 +28,8 @@ function createSnake() {
 }
 
 function drawFood() {
-    context.fillStyle =  'red';
-    context.fillRect(food.x , food.y, box, box )
+    context.fillStyle =  "red";
+    context.fillRect(food.x , food.y, box, box );
 }
 
 document.addEventListener('keydown', update);
