@@ -21,5 +21,24 @@ function createSnake() {
     }
 }
 
-criarBG();
-createSnake();
+function startGame() {
+    criarBG();
+    createSnake();
+
+    let snakeX=snake[0].x;
+    let snakeY=snake[0].y;
+
+    if (direction == 'right') snake+=box;
+    if (direction == 'left') snake+=box;
+    if (direction == 'up') snake+=box;
+    if (direction == 'down') snake+=box;
+        
+    snake.pop();
+    let newHead = { 
+        x: snakeX,
+        y: snakeY
+    }
+    snake.unshift(newHead);
+}
+
+let game = setInterval(startGame,100)
